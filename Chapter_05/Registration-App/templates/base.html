@@ -1,0 +1,43 @@
+<!-- base.html -->
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" 
+    type="text/css" rel="stylesheet">
+    <title>{% block title %}{{ title }}{% endblock title %}</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Web Application</h1>
+    </header>
+
+    <main>
+        <section id="sidebar">
+            <ul>
+                <strong>
+                    <li><a href="{{url_for('index')}}">Home</a></li>
+                    <li><a href="{{url_for('register')}}">Register</a></li>
+                    <li><a href="{{url_for('login')}}">Login</a></li>
+                </strong>
+            </ul>
+        </section>
+        <section id="content">
+
+            {% block content %}
+
+            {% endblock %}
+
+        </section>
+    </main>
+
+    <footer>
+        <small>&COPY; 2023 Mike Jackson &reg; All rights reserved</h4>
+    </footer>
+</body>
+
+</html>
