@@ -1,0 +1,27 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+                type="text/css" rel="stylesheet">
+    <title>Greet the Day</title>
+</head>
+
+<body onload="myFunction()">
+    <main>
+        <section>
+            <h2 id="greeting"></h2>
+            <h2> {{ name }} </h2>
+            <h3 id="time"></h3>
+        </section>
+    </main>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"
+                type="text/javascript"></script>
+</body>
+
+</html>

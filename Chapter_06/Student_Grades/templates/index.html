@@ -1,0 +1,49 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" 
+                type="text/css" rel="stylesheet">
+    <title>Student Grades List</title>
+</head>
+
+<body>
+    <header>
+        <h1>Student Grade List</h1>
+    </header>
+    <main>
+        <h2>Student Grades</h2>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Grade</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in grades %}
+                    <tr>
+                        <td>{{ row['Name'] }}</td>
+                        <td>{{ row['Grade'] }}</td>
+                        <td>
+                            {% if row['Grade'] >= 50 %}
+                            <div>Pass</div>
+                            {% else %}
+                            <div>Fail</div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

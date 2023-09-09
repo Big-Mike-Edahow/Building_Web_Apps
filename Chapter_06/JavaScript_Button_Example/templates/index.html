@@ -1,0 +1,31 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>JavaScript Button Example</title>
+</head>
+
+<body>
+    <main>
+        <section class="center">
+            <h1>Hi {{ name }}! 👋</h1>
+            <div>
+                <h2>Are you over the age of 18? ❓</h2>
+                <input type="hidden" id="nameId" name="name" value="{{name}}">
+                <button name="button1" id="button1" onclick="myFunction(this.id)">Yes ✅</button>
+                <button name="button2" id="button2" onclick="myFunction(this.id)">No ❌</button>
+                <p>
+                <div id="result"> </div>
+                </p>
+            </div>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='javascript/script.js') }}" type="text/javascript"></script>
+</body>
+
+</html>
