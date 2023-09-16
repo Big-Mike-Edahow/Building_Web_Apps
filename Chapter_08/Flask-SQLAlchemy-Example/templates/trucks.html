@@ -1,0 +1,29 @@
+<!-- trucks.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Trucks {% endblock %}
+{% block content %}
+
+<main>
+    <h1 class="center">🚚 Truck Details 🚚</h1>
+    <br>
+    <div class="center">
+        <form action="/add-truck" method="POST">
+            <label for="truck">Truck</label>
+            <input id="truck" name="truck" type="text" required>
+            <br>
+            <label for="price">Price</label>
+            <input id="price" name="price" type="text" required>
+            <br><br>
+            <button class="add-truck" type="submit">Add Truck</button>
+        </form>
+    </div>
+</main>
+
+{% endblock%}
+
+</html>
+

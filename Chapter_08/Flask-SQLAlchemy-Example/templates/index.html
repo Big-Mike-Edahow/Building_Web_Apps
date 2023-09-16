@@ -1,0 +1,52 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %} Home {% endblock %}
+{% block content %}
+
+<main>
+    <div class="center">
+        <h1>🚚 Big Rig Database! 🚚</h1><br><br>
+        <h3><a class="add-truck" href="{{ url_for('add_truck') }}">Add Truck</a></h3>
+    </div>
+    <br><br>
+    <div class="center">
+        <table class="center">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Truck</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Created On</th>
+                </tr>
+            </thead>
+
+            {% if not details%}
+            <div class="center">
+                <h3>No Records to Display!</h3>
+                <br>
+            </div>
+            {% else %}
+            <tbody>
+                {% for data in details %}
+                <tr>
+                    <th scope="row">{{data.id}}</th>
+                    <td>{{data.name}}</td>
+                    <td>${{data.price}}</td>
+                    <td>{{data.created_at}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+            {% endif %}
+        </table>
+    </div>
+</main>
+
+{% endblock %}
+
+</html>
+
