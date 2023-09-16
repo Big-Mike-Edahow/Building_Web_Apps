@@ -1,0 +1,55 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask-PyMongo App! 🥭</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏠</a>
+            <a href="{{ url_for('about') }}">About ❓</a>"
+        </nav>
+    </header>
+    <main>
+        <h1 class="center">Flask Todo List 🖊️📄</h1>
+        <br><hr><br>
+        <div class="center">
+            <form method="post">
+
+                <label for="content"><strong>Todo Content</strong></label>
+                <input type="text" name="content" placeholder="Todo Content"></input>
+                <br><br>
+                <label for="degree"><strong>Degree:</strong></label>
+                <label for="degree-0">Important</label>
+                <input id="degree-0" name="degree" required type="radio" value="Important">
+                <input id="degree-1" name="degree" required type="radio" value="Unimportant">
+                <label for="degree-1">Unimportant</label>
+                <br><br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="center">
+            <br><hr><br>
+            {% for todo in todos %}
+                <div class="todo">
+                    <p>{{ todo['content'] }} <i>({{ todo['degree']}})</i></p>
+                    <form method="POST" action="{{ url_for('delete', id=todo['_id']) }}" >
+                        <input type="submit" value="Delete Todo"
+                               onclick="return confirm('Are you sure you want to delete this entry?')">
+                    </form>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+
+</html>
+
