@@ -1,0 +1,9 @@
+/* style.css */
+
+body#index {
+    background-color: sandybrown;
+}
+
+body#greet {
+    background-color: lightslategrey;
+}

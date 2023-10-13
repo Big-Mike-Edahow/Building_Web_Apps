@@ -1,0 +1,46 @@
+<!-- status.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Login Status</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask File Uploading! ⬆️</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏠</a>
+            <a href="{{ url_for('about') }}">About 🛈</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="center">
+                <h1>Flask File Uploading! 💾</h1>
+                <br>
+                <h2>File Upload Status: 💻</h2>
+                <br>
+            </div>
+            <div class="center">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+
+                {% for category, message in messages %}
+                <p class="center"> {{ category }} : {{ message }} </p>
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+                <br><br>
+                <h3><a href="{{ url_for('index') }}">Return to Home Page</a></h3>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

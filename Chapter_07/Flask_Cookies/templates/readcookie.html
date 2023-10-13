@@ -1,0 +1,36 @@
+<!-- readcookie.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Read Cookie 🍪</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Cookies! 🍪</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏠</a>
+            <a href="{{ url_for('about') }}">About ❓</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="center">Welcome, {{ name }}! 🤗</h1>
+        <br>
+        <div class="center">
+            <label for="user-pwd">Enter your password to confirm your identity.</label>
+            <br>
+            <input type="password" name="user-pwd" id="user-pwd">
+            <input type="submit" name="submit" value="Submit">
+            <br><br>
+            <h3> Not you? ❓</h3>
+            <h3><a href="{{ url_for('index') }}">Click here to login with your username.</a> 🖊️</h3>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!-- about.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Flask Sessions</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+            url(' {{ background_image }} ');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Sessions! 🖥</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏠</a>
+            <a href="{{ url_for('about') }}">About 🛈</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="center">
+                <h1>About Big Mike! 🧔‍♂️</h1>
+                <br>
+                <figure>
+                    <img src="{{ url_for('static', filename='images/Big_Mike_Freddys.jpg') }}" alt="Big Mike"
+                        width="320px">
+                    <figcaption><strong>Big Mike! 🧔‍♂️</strong></figcaption>
+                </figure>
+                <br>
+                <h3>Big Mike is a socially awkward, 🤓<br>
+                    Clumsy Klutz. 🧔‍♂️</h3>
+            </div>
+        </section>
+    </main>
+

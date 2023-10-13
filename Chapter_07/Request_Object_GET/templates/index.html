@@ -1,0 +1,31 @@
+<!-- form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}"
+                type="text/css" rel="stylesheet">
+    <title>Request Object</title>
+</head>
+
+<body id="index">
+    <header>
+        <h1>Registration Form</h1>
+    </header>
+    <main>
+        <section>
+            <form action="/greet" methods="GET">
+                <label for="name">Name...</label>
+                <input type="text" name="name" id="name" required><br>
+                <label for="age">Age......</label>
+                <input type="text" name="age" id="age" required><br><br>
+                <input type="submit" value="submit" id="submit">
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>

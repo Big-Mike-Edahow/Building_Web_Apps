@@ -1,0 +1,50 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Flash Messages! 🦸</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏠</a>
+            <a href="{{ url_for('about') }}">About ❓</a>
+        </nav>
+    </header>
+    <main>
+        <h1 class="center">Flask Flash Messages! ⚡</h1>
+        <br>
+        <section>
+            <div class="center">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+
+                {% for category, message in messages %}
+                <p class="center"> {{ category }} : {{ message }} </p>
+                <br>
+                {% endfor %}
+
+                {% endif %}
+                {% endwith %}
+                <form action="/" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" id="username">
+                    <br>
+                    <label for="user-pwd">Password:</label>
+                    <input type="password" name="user-pwd" id="user-pwd">
+                    <br><br>
+                    <input type="submit" name="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

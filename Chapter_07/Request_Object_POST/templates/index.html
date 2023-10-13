@@ -1,0 +1,45 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Student Registration Form</title>
+</head>
+
+<body>
+    <main>
+        <h1 class="center">Student Registration Form</h1>
+        <section>
+            <div class="center">
+                <form action="/results" method="POST">
+                    <label for="name">Name: </label>
+                    <input type="text" name="name" id="name" required>
+                    <br>
+                    <label for="age">Age: </label>
+                    <input type="text" name="age" id="age" required>
+                    <br>
+                    <label for="gender">Gender: </label>
+                    <input type="radio" name="gender" id="male" value="Male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="female" value="Female">
+                    <label for="female">Female</label>
+                    <br>
+                    <label for="course">Course: </label>
+                    <input list="courses" id="course" name="course">
+                    <datalist id="courses">
+                        <option value="Computer Science 101"></option>
+                        <option value="Python Machine Learning 350"></option>
+                        <option value="Western Literature 314"></option>
+                    </datalist>
+                    <input type="submit" value="submit" id="submit">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

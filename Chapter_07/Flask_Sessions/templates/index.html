@@ -1,0 +1,60 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Flask Sessions</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+            url(' {{ background_image }} ');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Sessions! 🖥</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏠</a>
+            <a href="{{ url_for('about') }}">About 🛈</a>
+        </nav>
+    </header>
+    <main>
+        <section">
+            <h1><strong>Flask Session Example 🖥</strong></h1>
+            <br>
+            <h3><strong>Current background image is:</strong></h3>
+            <h3><strong> {{ background_image }} </strong></h3>
+            <br>
+        </section>
+        <section>
+            <form action="/new_background" method="POST">
+                <label for="idaho-timber"><strong>Idaho Timber</strong></label>
+                <input type="radio" name="background-image" value="images/Idaho_Timber.jpg">
+                <br>
+                <label for="kingfisher"><strong>Kingfisher, OK</strong></label>
+                <input type="radio" name="background-image" value="images/Kingfisher_Oklahoma.jpg">
+                <br>
+                <label for="nephi-utah"><strong>Nephi, Utah</strong></label>
+                <input type="radio" name="background-image" value="images/Nephi_Utah.jpg">
+                <br>
+                <label for="rigby-yard"><strong>Rigby Yard</strong></label>
+                <input type="radio" name="background-image" value="images/Rigby_Yard.jpg">
+                <br><br>
+                <input type="submit" id="submit" value="Change">
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
+

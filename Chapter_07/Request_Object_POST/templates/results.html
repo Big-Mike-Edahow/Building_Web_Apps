@@ -1,0 +1,43 @@
+<!-- results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Registration Results</title>
+</head>
+
+<body>
+    
+    <main>
+        <h1 class="center">Registration Results</h1>
+        <section>
+            <table class="center">
+                <tbody>
+                    <tr>
+                        <td> {{ student_info[0][0] }} </td>
+                        <td> {{ student_info[0][1] }} </td>
+                    </tr>
+                    <tr>
+                        <td> {{ student_info[1][0] }} </td>
+                        <td> {{ student_info[1][1] }} </td>
+                    </tr>
+                    <tr>
+                        <td> {{ student_info[2][0] }} </td>
+                        <td> {{ student_info[2][1] }} </td>
+                    </tr>
+                    <tr>
+                        <td> {{ student_info[3][0] }} </td>
+                        <td> {{ student_info[3][1] }} </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+</body>
+
+</html>
