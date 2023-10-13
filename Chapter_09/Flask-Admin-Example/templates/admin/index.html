@@ -1,0 +1,27 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'admin/master.html' %}
+{% block title %}Administrator's Home Page{% endblock %}
+{% block body %}
+
+<main>
+    <div class="text-center">
+        <h1>Flask-Admin! 👨‍💼</h1>
+        <hr><br>
+    </div>
+    <div class="text-center">
+        <figure>
+            <img src="{{ url_for('static', filename='images/Corporate_HQ.jpg')}}" alt="Corporate HQ"
+                width="320px">
+        </figure>
+        <br>
+        <h2><a href="{{ url_for('index') }}">Return to Home Page 🏡</a></h2>
+    </div>
+</main>
+
+{% endblock %}
+
+</html>

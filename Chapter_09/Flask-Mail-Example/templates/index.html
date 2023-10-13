@@ -1,0 +1,31 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<main>
+    <div class="text-center">
+        <h1></h1><br>
+        <h1 class="gfg">Welcome To Flask-Mail! 📬</h1>
+        <h3 class="strong">Send an email! 📧</h3>
+        <br>
+        <figure>
+            <img src="{{ url_for('static', filename='images/Blackville_SC.jpg') }}"
+                    alt="Blackville, South Carolina" width="320px">
+        </figure>
+        <br>
+        <form action="/send_mail" method="post">
+            <button type="submit" class="btn btn-primary bg-dark">Send Test Email! 💌</button>
+        </form>
+    </div>
+    <br>
+</main>
+
+{% endblock %}
+
+</html>
+

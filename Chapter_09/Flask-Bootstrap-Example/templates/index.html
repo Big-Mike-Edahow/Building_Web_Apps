@@ -1,0 +1,25 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<main>
+    <div class="text-center">
+        <h1>Flask-Bootstrap! 🥾</h1>
+        <br>
+    </div>
+    <div class="text-center">
+        <figure>
+            <img src="{{ url_for('static', filename='images/North_Carolina.jpg')}}"
+                    alt="Welcome to North Carolina" width="352px">
+            <figcaption>Welcome to North Carolina! ✈︎</figcaption>
+        </figure>
+    </div>
+</main>
+{% endblock %}
+
+</html>
