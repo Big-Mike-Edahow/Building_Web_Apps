@@ -1,0 +1,35 @@
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Form Submission Results</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Student List! 🧑‍🎓</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏡</a>
+            <a href="{{ url_for('about') }}">About 🛈</a>
+        </nav>
+    </header>
+    <main>
+        <div class="center">
+        <h1>Result of operation : </h1>
+        <br>
+        <h2 >{{ msg }}</h2>
+        <br><br>
+        <h3>
+            <a class="add-student" href="{{ url_for('index') }}">Go back to home page.</a>
+        </h3>
+        </div>
+    </main>
+</body>
+
+</html>
+

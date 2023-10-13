@@ -1,0 +1,64 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" type="text/css" rel="stylesheet">
+    <title>Home</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flask Student List! 🧑‍🎓</h1>
+        <nav>
+            <a href="{{ url_for('index') }}">Home 🏡</a>
+            <a href="{{ url_for('about') }}">About 🛈</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="center">
+                <h4><a class="add-student" href="{{ url_for('new_student')}}"">Add Student</a></h4>
+            </div>
+            <br>
+            <div class=" center student-table">
+                        <table class="center">
+                            <caption>
+                                <h2>Student Admission List</h2>
+                            </caption>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Gender</th>
+                                    <th>Course</th>
+                                    <th>Mobile</th>
+                                    <th>Username</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in student_list %}
+
+                                <tr>
+                                    <td>{{row['name']}}</td>
+                                    <td>{{row['gender']}}</td>
+                                    <td>{{row['course']}}</td>
+                                    <td>{{row['mobile']}}</td>
+                                    <td>{{row['username']}}</td>
+                                    <td><a href="{{ url_for('show', username=row['username']) }}">Edit</a></td>
+                                    <td><a href="{{ url_for('delete', name=row['name']) }}">Delete</a></td>
+                                </tr>
+
+                                {% endfor %}
+                            </tbody>
+                        </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
