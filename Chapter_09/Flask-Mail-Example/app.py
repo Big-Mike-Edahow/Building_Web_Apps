@@ -1,6 +1,3 @@
-my_username = 'b40b3432c60f97'
-my_password = '4747e7f1678787'
-
 # app.py
 # Flask-Mail Example
 
@@ -12,8 +9,8 @@ app.secret_key = 'Big Mike likes Cup O Noodles soup'
 
 app.config['MAIL_SERVER'] = 'sandbox.smtp.mailtrap.io'
 app.config['MAIL_PORT'] = 2525
-app.config['MAIL_USERNAME'] = my_username
-app.config['MAIL_PASSWORD'] = my_password
+app.config['MAIL_USERNAME'] = ""
+app.config['MAIL_PASSWORD'] = ""
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 
